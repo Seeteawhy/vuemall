@@ -1,9 +1,9 @@
 <template>
-  <div class="goods-item">
-    <img :src="items.show.img" alt="">
+  <div class="goods-item" @click="itemclk">
+    <img :src="items.show.img" alt="" @load="imgLoad">
     <div class="goods-info">
       <p>{{items.title}}</p>
-      <span class="price">{{items.price}}</span>
+      <span class="price">¥{{items.price}}</span>
       <span class="collect">{{items.cfav}}</span>
     </div>
   </div>
@@ -18,6 +18,14 @@ export default {
       default() {
         return {}
       }
+    }
+  },
+  methods: {
+    imgLoad() {
+      this.$bus.$emit('imgloaded')
+    },
+    itemclk() {
+      this.$router.push('/detail/' + this.items.iid)
     }
   }
 }
