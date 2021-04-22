@@ -1,127 +1,19 @@
 <template>
-  <div class="wrapper">
-    <ul class="content">
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      
-    </ul>
+  <div id="category">
+    分类施工中
   </div>
 </template>
 
 <script>
-import BScroll from "better-scroll"
+  export default {
+    name: "Category",
 
-export default {
-  name: 'category',
-  data() {
-    return {
-      scroll: null
-    }
-  },
-  mounted() {
-    this.scroll = new BScroll(document.querySelector('.wrapper'), {
-      probeType: 3,
-      pullUpLoad: true
-    })
-/*     this.scroll.on("scroll",(e)=> {
-      console.log(e)
-    }) */
-    this.scroll.on("pullingUp",()=> {
-      console.log('shanglajiazaigengduo')
-    })
   }
-}
 </script>
 
 <style scoped>
-  .wrapper {
-    height: 150px;
-    background-color:greenyellow;
+  #category {
+    height: 100vh;
   }
+
 </style>

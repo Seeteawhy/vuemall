@@ -13,6 +13,9 @@
           {{item}}
         </div>
       </div>
+      <div slot="right" class="cart-image" @click="cartClick">
+        <img src="~@/assets/img/tabbar/shopcart_active.svg" alt="">
+      </div>
     </nav-bar>
   </div>
 </template>
@@ -37,6 +40,9 @@ export default {
     },
     backClick() {
       this.$router.back()
+    },
+    cartClick() {
+      this.$router.push('/shopcart')
     }
   }
 }
@@ -55,5 +61,9 @@ export default {
   }
   .back-image img {
     margin-top: 12px;
+  }
+  .cart-image img {
+    width: 30px;
+    margin-top: 9px;
   }
 </style>
