@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     refresh() {
-      console.log("debounce refresh")
       this.scroll && this.scroll.refresh()
     },
     finishPull() {

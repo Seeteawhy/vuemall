@@ -1,6 +1,6 @@
 <template>
   <div class="goods-item" @click="itemclk">
-    <img :src="items.show.img" alt="" @load="imgLoad">
+    <img :src="showpics" alt="" @load="imgLoad">
     <div class="goods-info">
       <p>{{items.title}}</p>
       <span class="price">¥{{items.price}}</span>
@@ -22,16 +22,23 @@ export default {
   },
   methods: {
     imgLoad() {
-      this.$bus.$emit('imgloaded')
+      if(this.$route.path.includes('/home')){
+        this.$bus.$emit('imgloaded')
+      }
     },
     itemclk() {
       this.$router.push('/detail/' + this.items.iid)
+    }
+  },
+  computed: {
+    showpics() {
+      return this.items.image || this.items.show.img
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
   .goods-item {
     padding-bottom: 40px;
     position: relative;

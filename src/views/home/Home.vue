@@ -78,7 +78,7 @@ export default {
     getHomeItems(type) {
       const page = this.goods[type].page + 1
       getHomeItems(type, page).then(res => {
-        //console.log(res)
+        console.log(res)
         this.goods[type].list.push(...res.data.data.list) 
         this.goods[type].page += 1
         this.$refs.scroll.finishPull()

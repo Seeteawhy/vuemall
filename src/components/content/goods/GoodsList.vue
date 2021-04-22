@@ -2,7 +2,8 @@
   <div class="goods-list">
     <goods-list-item v-for="(item,idx,key) in goods" 
     :key="key" 
-    :items="item"></goods-list-item>
+    :items="item"
+    class="listitem"></goods-list-item>
   </div>
 </template>
 
@@ -24,10 +25,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .goods-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+
 </style>
