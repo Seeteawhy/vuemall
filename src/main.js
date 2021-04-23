@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import toast from './components/common/toast/index.js'
+import FastClick from 'fastclick'
 
 Vue.config.productionTip = false
-
+FastClick.attach(document.body)
 Vue.prototype.$bus = new Vue()
 Vue.use(toast)
 
