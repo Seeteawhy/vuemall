@@ -5,7 +5,7 @@
                   @click.native="selectAll"></check-button>
     <span>全选</span>
     <span class="total-price">合计：¥{{totalPrice}}</span>
-    <span class="buy-product">去结算({{totalqnt}})</span>
+    <span class="buy-product" @click="goBuy">去结算({{totalqnt}})</span>
   </div>
 </template>
 
@@ -42,6 +42,11 @@ export default {
         this.$store.state.cartList.forEach(it => it.isChecked = false)
       }else {
         this.$store.state.cartList.forEach(it => it.isChecked = true)
+      }
+    },
+    goBuy() {
+      if (this.$store.state.cartList.filter(it => it.isChecked).length === 0) {
+        this.$toast.show('请添加商品', 1000)
       }
     }
   }
