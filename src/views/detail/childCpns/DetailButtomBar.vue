@@ -15,8 +15,14 @@
       </div>
     </div>
     <div class="bar-item bar-right">
-      <div class="cart" @click="addToCart">加入购物车</div>
-      <div class="buy">购买</div>
+<!--       <div class="cart" @click="addToCart">加入购物车</div> -->
+      <van-button color="linear-gradient(to right, #ee0a24, #ff6034)"
+                  class="cart"
+                  @click="addToCart">
+        加入购物车
+      </van-button>
+<!--       <div class="buy">购买</div> -->
+      <van-button class="buy" color="#FF8C00">购买</van-button>
     </div>
   </div>
 </template>
@@ -74,8 +80,11 @@
   .bar-right .cart {
     background-color: #ffe817;
     color: #333;
+    height: 58px;
   }
   .bar-right .buy {
-    background-color: #f69;
+    background-color: #fff;
+    height: 58px;
+    width: 107px;
   }
 </style>

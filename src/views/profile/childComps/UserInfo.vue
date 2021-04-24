@@ -8,7 +8,7 @@
       </slot>
       <div class="login-info left">
         <slot name="user-nickname">
-          <div>登录/注册</div>
+          <div class="logtxt">登录/注册</div>
         </slot>
         <div class="phone">
           <span>
@@ -44,6 +44,7 @@
 
   .left {
     float: left;
+    width: 100px;
   }
 
   #user-info .arrow-svg {
@@ -62,7 +63,7 @@
 
     font-size: 13px;
     margin-top: 5px;
-    margin-left: 15px;
+    margin-left: 1px;
     font-weight: 300;
   }
 
@@ -73,4 +74,5 @@
     left: -15px;
     top: 0px;
   }
+
 </style>

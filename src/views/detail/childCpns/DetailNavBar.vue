@@ -14,7 +14,8 @@
         </div>
       </div>
       <div slot="right" class="cart-image" @click="cartClick">
-        <img src="~@/assets/img/tabbar/shopcart_active.svg" alt="">
+        <!-- <img src="~@/assets/img/tabbar/shopcart_active.svg" alt=""> -->
+        <van-icon class="icon" name="shopping-cart-o" :badge="skuqnt" />
       </div>
     </nav-bar>
   </div>
@@ -31,6 +32,13 @@ export default {
     return {
       arr: ['商品','参数','评论','推荐'],
       currentIndex: 0
+    }
+  },
+  computed: {
+    skuqnt() {
+      return this.$store.state.cartList.reduce((pre, cur)=> {
+        return pre + cur.count
+      },0)
     }
   },
   methods: {
@@ -62,8 +70,8 @@ export default {
   .back-image img {
     margin-top: 12px;
   }
-  .cart-image img {
-    width: 30px;
+  .cart-image .icon {
+    width: 25px;
     margin-top: 9px;
   }
 </style>
