@@ -26,7 +26,7 @@ export default {
         return it.isChecked
       }).reduce((prev, curr) => {
         return prev + curr.price * curr.count 
-      },0)
+      },0).toFixed(2)
     },
     totalqnt() {
       return this.$store.state.cartList.filter(it => {

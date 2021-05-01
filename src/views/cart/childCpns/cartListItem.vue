@@ -12,7 +12,8 @@
       <div class="item-desc">商品描述: {{itemInfo.desc}}</div>
       <div class="info-bottom">
         <div class="item-price left">¥{{itemInfo.price}}</div>
-        <div class="item-count right">x{{itemInfo.count}}</div>
+        <!-- <div class="item-count right">x{{itemInfo.count}}</div> -->
+        <van-stepper class="stepper" v-model="itemInfo.count" disable-input/>
       </div>
     </div>
   </div>
@@ -88,7 +89,14 @@ export default {
     left: 10px;
     right: 10px;
   }
-    .info-bottom .item-price {
+  .info-bottom .item-price {
+    float: left;
+    margin-top: 5px;
     color: orangered;
+  }
+  .info-bottom .stepper {
+    float: right;
+    right: 3px;
+    top:-3px
   }
 </style>

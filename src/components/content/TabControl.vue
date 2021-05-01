@@ -28,7 +28,7 @@ export default {
   methods: {
     itemclick(idx) {
       this.curidx = idx
-      console.log(idx)
+      //console.log(idx)
       this.$emit('tabclk', idx)
     }
   }

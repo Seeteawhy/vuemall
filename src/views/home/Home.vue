@@ -15,8 +15,8 @@
             :pull-up-load="true"
             @pullup="loadmore">
       <home-swiper :banners="banners" @swiperImgLoaded="swiperImgLoaded"></home-swiper>
-      <home-recommend :recommends="recommends"></home-recommend>
-      <feature-view></feature-view>
+      <home-recommend :recommends="recommends" @recommendLoaded="recommendLoaded"></home-recommend>
+      <feature-view @featureLoad="featureLoad"></feature-view>
       <tab-control :titles="['流行','新款','精选']" 
                     @tabclk="switchgoods"
                     ref="tabControl2"></tab-control>
@@ -54,7 +54,10 @@ export default {
       isShownBackTop: false,
       tabOffsetTop: 546,
       isShownTab: false,
-      seenPlace: 0
+      seenPlace: 0,
+      isSwiperLoaded: false,
+      isFeatureLoaded: false,
+      isRecommendLoaded: false,
     }
   },
   components: {
@@ -78,7 +81,6 @@ export default {
     getHomeItems(type) {
       const page = this.goods[type].page + 1
       getHomeItems(type, page).then(res => {
-        console.log(res)
         this.goods[type].list.push(...res.data.data.list) 
         this.goods[type].page += 1
         this.$refs.scroll.finishPull()
@@ -107,7 +109,22 @@ export default {
       this.getHomeItems(this.curType)
     },
     swiperImgLoaded() {
-      this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop
+      this.isSwiperLoaded = true
+      if(this.isSwiperLoaded && this.isRecommendLoaded && this.isFeatureLoaded){
+        this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop
+      }
+    },
+    featureLoad(){
+      this.isFeatureLoaded = true
+      if(this.isSwiperLoaded && this.isRecommendLoaded && this.isFeatureLoaded){
+        this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop
+      }
+    },
+    recommendLoaded(){
+      this.isRecommendLoaded = true
+      if(this.isSwiperLoaded && this.isRecommendLoaded && this.isFeatureLoaded){
+        this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop
+      }
     }
   },
   created() {

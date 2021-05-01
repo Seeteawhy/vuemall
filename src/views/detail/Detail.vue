@@ -76,7 +76,6 @@ export default {
   created() {
     this.iid = this.$route.params.iid
     getDetail(this.iid).then(res => {
-      console.log(res)
       this.topImages = res.data.result.itemInfo.topImages
       this.goods = new Goods(res.data.result.itemInfo, res.data.result.columns,res.data.result.shopInfo.services)
       this.shop = new Shop(res.data.result.shopInfo)

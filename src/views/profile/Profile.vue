@@ -27,8 +27,15 @@
     </section>
 
     <!--3.封装成一个整体-->
-    <list-view :list-data="orderList" class="order-list"></list-view>
-    <list-view :list-data="serviceList" class="service-list"></list-view>
+    <!-- <list-view :list-data="orderList" class="order-list"></list-view> -->
+    <!-- <list-view :list-data="serviceList" class="service-list"></list-view> -->
+    <div class="myAcount">
+      <van-cell class="proItem" title="我的消息" icon="chat-o" value="阅读更多" is-link/>
+      <van-cell class="proItem" title="积分商城" icon="refund-o" value="购物不停" is-link/>
+      <van-cell class="proItem" title="会员卡" icon="gift-card-o" value="充值有礼" is-link/>
+      <van-cell class="proItem" title="我的购物车" icon="shopping-cart-o" value="买它！" is-link/>
+      <van-cell class="proItem" title="下载购物APP" icon="down" value="发现更多" is-link/>
+    </div>
   </div>
 </template>
 
@@ -105,5 +112,11 @@
   .order-list, .service-list {
     margin-top: 12px;
   }
-
+  .myAcount {
+    margin-top: 12px;
+  }
+  .proItem {
+    padding-left: 20px;
+    font-size: 16px;
+  }
 </style>
