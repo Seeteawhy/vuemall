@@ -5,8 +5,8 @@
                   @click.native="selectAll"></check-button>
     <span>全选</span>
     <span class="total-price">合计：¥{{totalPrice}}</span>
-<!--     <span class="buy-product" @click="goBuy">去结算({{totalqnt}})</span>
- -->    <van-button class="buy-product"
+    <van-button class="buy-product"
+                @click="goBuy"
                 color="linear-gradient(to right, #ee0a24, #FF1493)">
       去结算({{totalqnt}})
     </van-button>
